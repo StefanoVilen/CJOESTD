@@ -57,8 +57,9 @@ void calcularMedia(){
     cout << "A media da Turma e: " << resultado << "\n";
 }
 
-void notaMaior(){
-    int maior = 0;
+void notaMaiorMenor(){
+    int maior = notas[0];
+    int menor = notas[0];
     if (index == 0)
     {
         cout << "Nenhuma nota cadastrada \n";
@@ -67,31 +68,20 @@ void notaMaior(){
 
     for(int i = 0; i < index; i++)
     {
-        if(notas[i] > notas[i - 1]){
+        if(menor > notas[i]){
+            menor = notas[i];
+        }
+        if(maior < notas[i]){
             maior = notas[i];
         }
     }
     
-    cout << "A menor nota e: " << maior << "\n";
-}
-
-void notaMenor(){
-    int menor = 0;
-
-     if (index == 0)
-    {
-        cout << "Nenhuma nota cadastrada \n";
-        return;
-    }
-    for(int i = 0; i < index; i++)
-    {
-        if(notas[i] < notas[i - 1]){
-            menor = notas[i];
-        }
-    }
     cout << "A menor nota e: " << menor << "\n";
-    
+    cout << "A maior nota e: " << maior << "\n";
 }
+
+
+
 
 int main(){
     int op;
@@ -122,8 +112,8 @@ int main(){
             break;
 
         case 4:
-            notaMenor();
-            notaMaior();
+            notaMaiorMenor();
+            ;
             break;
         
         default:
