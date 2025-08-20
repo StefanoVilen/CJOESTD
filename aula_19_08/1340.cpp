@@ -57,6 +57,22 @@ int desinfileirar(){
 int main(){
  int valor, op;
  cin >> op;
+
+ switch (op)
+ {
+ case 1:
+    cin >> valor;
+    inserir(valor);
+    break;
+ 
+ case 2:
+    cin >> valor;
+    inserir(valor);
+    break;
+ 
+ default:
+    break;
+ }
  
  
 }
