@@ -5,6 +5,8 @@ using namespace std;
 struct No {
     int valor;
     No* proximo;
+    No* ant;
+    
 };
 
 void inserirFim(No*& cabeca, int valor){
@@ -14,6 +16,7 @@ void inserirFim(No*& cabeca, int valor){
     while(aux->proximo != nullptr){
         aux = aux->proximo;
     }
+    novoNo->ant = aux;
     aux->proximo = novoNo;
 }
 
